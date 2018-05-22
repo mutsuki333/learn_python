@@ -26,7 +26,7 @@ def get_credentials():
 
      傳回值：取得的憑證
   """
-  credential_path = os.path.join("./", 'google-ocr-credential.json')
+  credential_path = os.path.join("../", 'google-ocr-credential.json')
   store = Storage(credential_path)
   credentials = store.get()
   if not credentials or credentials.invalid:
