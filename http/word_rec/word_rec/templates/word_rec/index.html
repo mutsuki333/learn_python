@@ -13,6 +13,10 @@
         <button type="submit">Upload</button>
       </form>
 
+      {% if result %}
+        <p>The result is : <br>{{ result }}</p>
+      {% endif %}
+
       {% if uploaded_file_url %}
         <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
       {% endif %}
