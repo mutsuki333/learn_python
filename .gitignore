@@ -3,3 +3,4 @@
 **/.ipynb_checkpoints
 **/__pycache__
 **/client_id.json
+**/http/word_rec/image/*
