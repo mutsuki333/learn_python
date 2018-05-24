@@ -12,7 +12,13 @@ Listen to global by
 python manage.py runserver 0.0.0.0:3000 #or 0:3000 for short.
 ```
 ### **Django templates syntax** \: [ref](https://docs.djangoproject.com/en/1.7/topics/templates/)
-Variables look like ``{{ variables}}``
+**Variables** look like : **``{{ variables }}``**
+
+**Filters** look like : **``{{ variables|Filters }}``**
+> ``{{ variables|lower }}`` to convert text to lowercase.
+> 
+
+
 ### **File path in Django project** \: [ref](https://stackoverflow.com/questions/17406126/how-can-i-use-relative-path-to-read-local-files-in-django-app)
 Use `absolute path` can be a easier way. Declare something like `FILES_FOLDER` in the settings.py.
 ```Python
