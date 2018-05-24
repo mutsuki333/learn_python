@@ -14,7 +14,13 @@
       </form>
 
       {% if result %}
-        <p>The result is : <br>{{ result }}</p>
+        <p>The result is :
+          <br>
+          {% for line in result %}
+          <br>
+          {{ line }}
+          {% endfor %}
+        </p>
       {% endif %}
 
       {% if uploaded_file_url %}

@@ -9,15 +9,16 @@ from oauth2client import client
 from oauth2client import tools
 from oauth2client.file import Storage
 from apiclient.http import MediaFileUpload, MediaIoBaseDownload
+from word_rec.settings import GOOGLE_AUTH_FILE
 
 try:
   import argparse
-  flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
+  flags = tools.argparser.parse_args([])
 except ImportError:
   flags = None
 
 SCOPES = 'https://www.googleapis.com/auth/drive'
-CLIENT_SECRET_FILE = 'client_id.json'
+CLIENT_SECRET_FILE = GOOGLE_AUTH_FILE+'client_id.json'
 APPLICATION_NAME = 'IIM_Project'
 
 class IIM_G:
@@ -28,7 +29,7 @@ class IIM_G:
 
         傳回值：取得的憑證
         """
-        credential_path = os.path.join("../", 'google-ocr-credential.json')
+        credential_path = GOOGLE_AUTH_FILE + 'google-ocr-credential.json'
         store = Storage(credential_path)
         credentials = store.get()
         if not credentials or credentials.invalid:
@@ -58,11 +59,10 @@ class IIM_G:
             'name': imgfile,
             'mimeType': mime
         },
-        media_body=MediaFileUpload(imgfile, mimetype=mime, resumable=True)
+        media_body=MediaFileUpload('image/'+imgfile, mimetype=mime, resumable=True)
         ).execute()
         txtfile = filename[:-4]+'.txt'
-        print(txtfile)
-        result = str()
+        result = list()
 
         # 下載辨識結果，儲存為文字檔案
         downloader = MediaIoBaseDownload(
@@ -75,9 +75,10 @@ class IIM_G:
 
         # 刪除剛剛上傳的 Google 文件檔案
         service.files().delete(fileId=res['id']).execute()
-        f = open(txtfile, 'r')
-        result = f.read()
-        print(result)
+        with open(txtfile, 'r') as f:
+            for line in f:
+                result.append(line)
+        os.remove(txtfile)
         return result
 
 if __name__ == '__main__':
