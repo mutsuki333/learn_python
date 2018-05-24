@@ -1,4 +1,16 @@
 # Django notes
+### **Run test server**
+```shell
+python manage.py runserver
+```
+Specify which port to listen on by giving the port as a parameter.
+```shell
+python manage.py runserver 3000
+```
+Listen to global by
+```shell
+python manage.py runserver 0.0.0.0:3000 #or 0:3000 for short.
+```
 ### **File path in Django project** \: [ref](https://stackoverflow.com/questions/17406126/how-can-i-use-relative-path-to-read-local-files-in-django-app)
 Use `absolute path` can be a easier way. Declare something like `FILES_FOLDER` in the settings.py.
 ```Python
@@ -12,9 +24,6 @@ from yourproject.settings import BASE_DIR
 file_path = os.path.join(BASE_DIR, 'relative_path')
 ```
 Bear in mind that the relative path is from your Django pro
-
-
-
 
 
 ### **A good structure example** \: [ref](https://stackoverflow.com/questions/22841764/best-practice-for-django-project-working-directory-structure)
@@ -57,7 +66,7 @@ pytest.ini
 * The pip package management tool.
 * A Google account with Google Drive enabled.
 #### install
-```cmd
+```shell
 pip install --upgrade google-api-python-client
 ```
 
