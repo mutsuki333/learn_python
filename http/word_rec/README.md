@@ -1,5 +1,23 @@
 # Django notes
-### **A good structure example** \:[ref](https://stackoverflow.com/questions/22841764/best-practice-for-django-project-working-directory-structure)
+### **File path in Django project** \: [ref](https://stackoverflow.com/questions/17406126/how-can-i-use-relative-path-to-read-local-files-in-django-app)
+#### Use ``absolute path`` can be a easier way, Declare something like `FILES_FOLDER` in the settings.py.
+```Python
+import os
+FILES_FOLDER = os.path.join(BASE_DIR, 'relative_path/')
+```
+and `from yourproject.settings import FILES_FOLDER`, or just simply import `BASE_DIR` on the run.
+```Python
+import os
+from yourproject.settings import BASE_DIR
+file_path = os.path.join(BASE_DIR, 'relative_path')
+```
+Bear in mind that the relative path is from your Django pro
+
+
+
+
+
+### **A good structure example** \: [ref](https://stackoverflow.com/questions/22841764/best-practice-for-django-project-working-directory-structure)
 ```
 ~/projects/project_name/
 
