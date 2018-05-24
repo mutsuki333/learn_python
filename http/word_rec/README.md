@@ -15,8 +15,8 @@ python manage.py runserver 0.0.0.0:3000 #or 0:3000 for short.
 **Variables** look like : **``{{ variables }}``**
 
 **Filters** look like : **``{{ variables|Filters }}``**
-> ``{{ variables|lower }}`` to convert text to lowercase.
-> 
+> `{{ variables|lower }}` to convert text to lowercase.
+>
 
 
 ### **File path in Django project** \: [ref](https://stackoverflow.com/questions/17406126/how-can-i-use-relative-path-to-read-local-files-in-django-app)
