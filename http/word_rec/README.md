@@ -19,7 +19,8 @@ python manage.py runserver 0.0.0.0:3000 #or 0:3000 for short.
 > `{{ list|join:", " }}` to join a list with commas and space.
 > `{{ value|default:"nothing" }}` If **value** isn’t provided or is empty, the above will display “**nothing**”.
 
-**for**
+
+## **for**
 ex.
 ```django
 <ul>
