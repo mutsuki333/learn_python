@@ -12,11 +12,25 @@ Listen to global by
 python manage.py runserver 0.0.0.0:3000 #or 0:3000 for short.
 ```
 ### **Django templates syntax** \: [ref](https://docs.djangoproject.com/en/1.7/topics/templates/)
-**Variables** look like : **``{{ variables }}``**
+**Variables** look like : **`{{ variables }}`**
 
-**Filters** look like : **``{{ variables|Filters }}``**
+**Filters** look like : **`{{ variables|Filters }}`** : [more](https://docs.djangoproject.com/en/1.7/ref/templates/builtins/#ref-templates-builtins-filters)
 > `{{ variables|lower }}` to convert text to lowercase.
->
+> `{{ list|join:", " }}` to join a list with commas and space.
+> `{{ value|default:"nothing" }}` If **value** isn’t provided or is empty, the above will display “**nothing**”.
+
+**for**
+ex.
+```django
+<ul>
+{% for athlete in athlete_list %}
+    <li>{{ athlete.name }}</li>
+{% endfor %}
+</ul>
+```
+
+**if**, **elif**, and **else**
+
 
 
 ### **File path in Django project** \: [ref](https://stackoverflow.com/questions/17406126/how-can-i-use-relative-path-to-read-local-files-in-django-app)
