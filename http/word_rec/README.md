@@ -20,8 +20,7 @@ python manage.py runserver 0.0.0.0:3000 #or 0:3000 for short.
 > `{{ value|default:"nothing" }}` If **value** isn’t provided or is empty, the above will display “**nothing**”.
 
 
-#### **for**
-ex.
+**for**
 ```django
 <ul>
 {% for athlete in athlete_list %}
@@ -31,7 +30,78 @@ ex.
 ```
 
 **if**, **elif**, and **else**
+```django
+{% if athlete_list %}
+    Number of athletes: {{ athlete_list|length }}
+{% elif athlete_in_locker_room_list %}
+    Athletes should be out of the locker room soon!
+{% else %}
+    No athletes.
+{% endif %}
+```
+```django
+{% if athlete_list|length > 1 %}
+   Team: {% for athlete in athlete_list %} ... {% endfor %}
+{% else %}
+   Athlete: {{ athlete_list.0.name }}
+{% endif %}
+```
 
+**comment**
+```django
+{# greeting #}
+```
+
+**Template inheritance**
+```django
+<!DOCTYPE html> {# base.html #}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <title>{% block title %}My amazing site{% endblock %}</title>
+</head>
+
+<body>
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
+```
+block tag tell the template engine that a child template may override those portions of the template.
+```django
+{% extends "base.html" %}
+
+{% block title %}My amazing blog{% endblock %}
+
+{% block content %}
+{% for entry in blog_entries %}
+    <h2>{{ entry.title }}</h2>
+    <p>{{ entry.body }}</p>
+{% endfor %}
+{% endblock %}
+```
+
+**Turn off automatic HTML escaping**
+```django
+{# For individual variables #}
+This will be escaped: {{ data }}
+This will not be escaped: {{ data|safe }}
+
+{# For template blocks #}
+{% autoescape off %}
+    Hello {{ name }}
+{% endautoescape %}
+```
 
 
 ### **File path in Django project** \: [ref](https://stackoverflow.com/questions/17406126/how-can-i-use-relative-path-to-read-local-files-in-django-app)
