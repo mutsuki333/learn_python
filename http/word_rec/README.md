@@ -1,5 +1,5 @@
 # Django notes
-### **Run test server**
+## **Run test server**
 ```shell
 python manage.py runserver
 ```
@@ -11,16 +11,16 @@ Listen to global by
 ```shell
 python manage.py runserver 0.0.0.0:3000 #or 0:3000 for short.
 ```
-### **Django templates syntax** \: [ref](https://docs.djangoproject.com/en/1.7/topics/templates/)
-## **Variables** look like : **`{{ variables }}`**
+## **Django templates syntax** \: [ref](https://docs.djangoproject.com/en/1.7/topics/templates/)
+### **Variables** look like : **`{{ variables }}`**
 
-## **Filters** look like : **`{{ variables|Filters }}`** : [more](https://docs.djangoproject.com/en/1.7/ref/templates/builtins/#ref-templates-builtins-filters)
+### **Filters** look like : **`{{ variables|Filters }}`** : [more](https://docs.djangoproject.com/en/1.7/ref/templates/builtins/#ref-templates-builtins-filters)
 > `{{ variables|lower }}` to convert text to lowercase.
 > `{{ list|join:", " }}` to join a list with commas and space.
 > `{{ value|default:"nothing" }}` If **value** isn’t provided or is empty, the above will display “**nothing**”.
 
 
-**for**
+### **for**
 ```django
 <ul>
 {% for athlete in athlete_list %}
@@ -29,7 +29,7 @@ python manage.py runserver 0.0.0.0:3000 #or 0:3000 for short.
 </ul>
 ```
 
-## **if**, **elif**, and **else**
+### **if**, **elif**, and **else**
 ```django
 {% if athlete_list %}
     Number of athletes: {{ athlete_list|length }}
@@ -47,12 +47,12 @@ python manage.py runserver 0.0.0.0:3000 #or 0:3000 for short.
 {% endif %}
 ```
 
-**comment**
+### **comment**
 ```django
 {# greeting #}
 ```
 
-**Template inheritance**
+### **Template inheritance**
 ```django
 <!DOCTYPE html> {# base.html #}
 <html lang="en">
@@ -91,7 +91,7 @@ block tag tell the template engine that a child template may override those port
 {% endblock %}
 ```
 
-**Turn off automatic HTML escaping**
+### **Turn off automatic HTML escaping**
 ```django
 {# For individual variables #}
 This will be escaped: {{ data }}
@@ -104,7 +104,7 @@ This will not be escaped: {{ data|safe }}
 ```
 
 
-### **File path in Django project** \: [ref](https://stackoverflow.com/questions/17406126/how-can-i-use-relative-path-to-read-local-files-in-django-app)
+## **File path in Django project** \: [ref](https://stackoverflow.com/questions/17406126/how-can-i-use-relative-path-to-read-local-files-in-django-app)
 Use `absolute path` can be a easier way. Declare something like `FILES_FOLDER` in the settings.py.
 ```Python
 import os
@@ -119,7 +119,7 @@ file_path = os.path.join(BASE_DIR, 'relative_path')
 Bear in mind that the relative path is from your Django pro
 
 
-### **A good structure example** \: [ref](https://stackoverflow.com/questions/22841764/best-practice-for-django-project-working-directory-structure)
+## **A good structure example** \: [ref](https://stackoverflow.com/questions/22841764/best-practice-for-django-project-working-directory-structure)
 ```shell
 ~/projects/project_name/
 
@@ -153,17 +153,17 @@ pytest.ini
 
 
 # Google API
-### **Google APIs python install** \: [ref](https://developers.google.com/drive/api/v3/quickstart/python)
-#### requirements
+## **Google APIs python install** \: [ref](https://developers.google.com/drive/api/v3/quickstart/python)
+### requirements
 * Python 2.6 or greater.
 * The pip package management tool.
 * A Google account with Google Drive enabled.
-#### install
+### install
 ```shell
 pip install --upgrade google-api-python-client
 ```
 
-### **Google API might stop Django from runing** \: [ref](https://stackoverflow.com/questions/34758516/google-calendar-api-stops-django-from-starting)
+## **Google API might stop Django from runing** \: [ref](https://stackoverflow.com/questions/34758516/google-calendar-api-stops-django-from-starting)
 Replace
 ```python
 flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
