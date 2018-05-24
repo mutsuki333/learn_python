@@ -12,9 +12,9 @@ Listen to global by
 python manage.py runserver 0.0.0.0:3000 #or 0:3000 for short.
 ```
 ### **Django templates syntax** \: [ref](https://docs.djangoproject.com/en/1.7/topics/templates/)
-**Variables** look like : **`{{ variables }}`**
+## **Variables** look like : **`{{ variables }}`**
 
-**Filters** look like : **`{{ variables|Filters }}`** : [more](https://docs.djangoproject.com/en/1.7/ref/templates/builtins/#ref-templates-builtins-filters)
+## **Filters** look like : **`{{ variables|Filters }}`** : [more](https://docs.djangoproject.com/en/1.7/ref/templates/builtins/#ref-templates-builtins-filters)
 > `{{ variables|lower }}` to convert text to lowercase.
 > `{{ list|join:", " }}` to join a list with commas and space.
 > `{{ value|default:"nothing" }}` If **value** isn’t provided or is empty, the above will display “**nothing**”.
@@ -29,7 +29,7 @@ python manage.py runserver 0.0.0.0:3000 #or 0:3000 for short.
 </ul>
 ```
 
-**if**, **elif**, and **else**
+## **if**, **elif**, and **else**
 ```django
 {% if athlete_list %}
     Number of athletes: {{ athlete_list|length }}
