@@ -1,6 +1,6 @@
 # Django notes
 ### **File path in Django project** \: [ref](https://stackoverflow.com/questions/17406126/how-can-i-use-relative-path-to-read-local-files-in-django-app)
-Use `absolute path` can be a easier way, Declare something like `FILES_FOLDER` in the settings.py.
+Use `absolute path` can be a easier way. Declare something like `FILES_FOLDER` in the settings.py.
 ```Python
 import os
 FILES_FOLDER = os.path.join(BASE_DIR, 'relative_path/')
@@ -62,11 +62,11 @@ pip install --upgrade google-api-python-client
 ```
 
 ### **Google API might stop Django from runing** \: [ref](https://stackoverflow.com/questions/34758516/google-calendar-api-stops-django-from-starting)
-#### Replace
+Replace
 ```python
 flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
 ```
-#### with
+with
 ```python
 flags = tools.argparser.parse_args([])
 ```
