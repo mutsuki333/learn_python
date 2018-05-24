@@ -25,7 +25,7 @@ GOOGLE_AUTH_FILE = os.path.join(BASE_DIR, 'word_rec/google_auth/')
 SECRET_KEY = 'e8yx2(k4@o2r93^&0!lmt&xrlx&gbr$0_c83f1ropxymqpz4cx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
