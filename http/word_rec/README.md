@@ -5,9 +5,9 @@
 #### requirements
 * Python 2.6 or greater.
 * The pip package management tool.
-* A Google account with Google Drive enabled.  
+* A Google account with Google Drive enabled.
 install
-    pip install --upgrade google-api-python-client
+```cmd pip install --upgrade google-api-python-client```
 
 #### *Google API might stop Django from runing*
 ##### [ref](https://stackoverflow.com/questions/34758516/google-calendar-api-stops-django-from-starting)
