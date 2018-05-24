@@ -7,8 +7,10 @@
   </head>
   <body>
     <div style="text-align:center";>
-      <h1>請上傳圖片</h1>
-      <form method="post" enctype="multipart/form-data">
+      <h1 style="font-size:10vw">請上傳圖片</h1>
+      <br>
+      <br>
+      <form method="post" enctype="multipart/form-data" style="font-size:5vw;">
         {% csrf_token %}
         <input type="file" name="myfile" type="image">
         <button type="submit">Upload</button>
@@ -25,7 +27,7 @@
       {% endif %}
 
       {% if uploaded_file_url %}
-        <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+        <p style="font-size:5vw;">File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
       {% endif %}
 
     </div>
