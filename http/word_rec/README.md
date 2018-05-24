@@ -11,6 +11,8 @@ Listen to global by
 ```shell
 python manage.py runserver 0.0.0.0:3000 #or 0:3000 for short.
 ```
+### **Django templates syntax** \: [ref](https://docs.djangoproject.com/en/1.7/topics/templates/)
+Variables look like ``{{ variables}}``
 ### **File path in Django project** \: [ref](https://stackoverflow.com/questions/17406126/how-can-i-use-relative-path-to-read-local-files-in-django-app)
 Use `absolute path` can be a easier way. Declare something like `FILES_FOLDER` in the settings.py.
 ```Python
@@ -27,7 +29,7 @@ Bear in mind that the relative path is from your Django pro
 
 
 ### **A good structure example** \: [ref](https://stackoverflow.com/questions/22841764/best-practice-for-django-project-working-directory-structure)
-```
+```shell
 ~/projects/project_name/
 
 docs/               # documentation
