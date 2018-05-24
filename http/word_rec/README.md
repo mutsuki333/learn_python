@@ -5,7 +5,7 @@
 #### requirements
 * Python 2.6 or greater.
 * The pip package management tool.
-* A Google account with Google Drive enabled.
+* A Google account with Google Drive enabled.  
 install
     pip install --upgrade google-api-python-client
 
