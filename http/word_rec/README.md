@@ -1,6 +1,6 @@
 # Django notes
 ### **File path in Django project** \: [ref](https://stackoverflow.com/questions/17406126/how-can-i-use-relative-path-to-read-local-files-in-django-app)
-#### Use ``absolute path`` can be a easier way, Declare something like `FILES_FOLDER` in the settings.py.
+Use `absolute path` can be a easier way, Declare something like `FILES_FOLDER` in the settings.py.
 ```Python
 import os
 FILES_FOLDER = os.path.join(BASE_DIR, 'relative_path/')
