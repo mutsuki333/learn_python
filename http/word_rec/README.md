@@ -1,5 +1,4 @@
 # Django notes
-<h1><strong> This is a Title</strong></h1>
 ## **Run test server**
 ```shell
 python manage.py runserver
