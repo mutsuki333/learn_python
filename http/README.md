@@ -73,7 +73,7 @@ Change the script fill to executable.
 `sudo chmod u+x gunicorn_start`
 
 ## Starting and monitoring with Supervisor
-**install** : `sudo apt-get install supervisor`
+**install** : `sudo apt-get install supervisor`  
 When Supervisor is installed you can give it programs to start and watch by creating configuration files in the `/etc/supervisor/conf.d` directory.  
 [ref.](http://supervisord.org/configuration.html#program-x-section-example)  
 in `/etc/supervisor/conf.d/word_rec.conf`
